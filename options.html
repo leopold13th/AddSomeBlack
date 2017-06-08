@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>AddSomeBlack Options</title>
+  <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+  <style>
+    body: { padding: 10px; margin: 10px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <br/><br/>
+    <div class="row">
+      <div class="col-sm-4 col-sm-offset-4">
+        <div class="well">
+          <legend><h2>Options</h2></legend>
+          <div class="form-group">
+            <label for="colorselector">Enter your favorite color</label>
+            <input id="darkcolor" type="text" class="form-control" placeholder="#000000">
+            <p class="help-block">or select it</p>
+            <input id="darkcolorinput" type="color" name="darkcolor" value="#000000">
+          </div>
+          <button id="save" class="btn btn-default">Save</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="status"></div>
+  <script src="options.js"></script>
+</body>
+</html>
