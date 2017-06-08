@@ -18,7 +18,7 @@ function save_options() {
 function restore_options() {
   // Use default value color = 'red' and likesColor = true.
   chrome.storage.sync.get({
-    darkColor: '#000e00'
+    darkColor: '#000000'
   }, function(items) {
     document.getElementById('darkcolor').value = items.darkColor;
     document.getElementById('darkcolorinput').value = items.darkColor;
