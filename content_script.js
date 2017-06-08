@@ -1,19 +1,28 @@
 // Based on https://stackoverflow.com/questions/2399797/javascript-let-user-select-an-html-element-like-firebug
 
 var mouseover = function(e) {
-    e.stopPropagation();
-    e.target.addEventListener("mouseout", function (e) {
-        e.target.classList.remove("highlight-9b9b5123-c7e7-42b1-865e-7435843ead70");
-    });
-    e.target.classList.add("highlight-9b9b5123-c7e7-42b1-865e-7435843ead70");
+  e.stopPropagation();
+  e.target.addEventListener("mouseout", function (e) {
+    e.target.classList.remove("highlight-9b9b5123-c7e7-42b1-865e-7435843ead70");
+  });
+  e.target.classList.add("highlight-9b9b5123-c7e7-42b1-865e-7435843ead70");
 }
 
-var click = function(e) {
+function click(e) {
   e.stopPropagation();
   // console.log("Clicked " + e.target.tagName)
   delListeners();
 
-  var newcolor = "black";
+  chrome.storage.sync.get({
+    darkColor: '#000000',
+  }, function(items) {
+    blackify(e, items.darkColor);
+    // console.log("newcolor1 > " + newcolor);
+  });
+  // console.log("newcolor2 > " + newcolor);
+}
+
+function blackify(e, newcolor) {
 
   // 1. Blackify element
   e.target.style.color = newcolor
